@@ -25,7 +25,7 @@ contract gasChallenge {
     //Sum of elements in the numbers array should equal 0
     function optimizedFunction() public {
         uint[10] storage cachedNumbers = numbers;
-        // use of postfix increment (i++) syntax
+        // use prefix increment (++i) syntax
         for (uint i = 0; i < cachedNumbers.length; ++i) {
         unchecked {
                 cachedNumbers[i] = 0;
