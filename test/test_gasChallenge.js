@@ -12,15 +12,17 @@ describe("Deploy Gas Challenge Contract", () => {
   });
 
   describe("Compute Gas", () => {
-    it("Should return lower gas", async () => {
+    it.only("Should return lower gas", async () => {
       await gas_contract.notOptimizedFunction();
       await gas_contract.optimizedFunction();
     });
   });
 
   describe("Check Sum Of Array", () => {
-    it("Should return 0", async () => {
+    it.only("Should return 0", async () => {
       // Write test block here to check sum of array equals 0
+      await gas_contract.optimizedFunction();
+      expect(await gas_contract.getSumOfArray()).to.equal(0);
     });
   });
 });
